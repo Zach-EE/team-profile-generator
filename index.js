@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-const util = require('util');
 
 const Engineer = require('./lib/Engineer');
 function init (){
@@ -27,13 +26,30 @@ function addEmployee() {
         name: 'role'
     },
     {
-        message: "Enter employee's email..."
-        name: email;
-    },
-    {
-        type: "list"
-    }
-    ]);
+        message: "Enter employee's email...",
+        name: 'email'
+    }])
+    .then(({name, role, id, email}) => {
+        let roleInfo = "";
+
+        if (role === "Engineer") {
+            roleInfo = "gitHub username";
+        }
+        inquirer.prompt([{
+            message:`Enter ${role}'s ${roleInfo}...`,
+            name: 'roleInfo'
+        },
+        {
+            type: "list",
+            message: "Add additional employee...",
+            choices: [
+                "yes",
+                "no"
+            ],
+            name: "anotherEmployee"
+        }]);
+    });
+
 };
 
 
