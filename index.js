@@ -34,6 +34,10 @@ function addEmployee() {
 
         if (role === "Engineer") {
             roleInfo = "gitHub username";
+        } else if (role === "Intern") {
+            roleInfo = "school name";
+        } else {
+            roleInfo = "office-phone";
         }
         inquirer.prompt([{
             message:`Enter ${role}'s ${roleInfo}...`,
