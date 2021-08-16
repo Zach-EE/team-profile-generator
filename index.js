@@ -7,7 +7,35 @@ const Engineer = require('./lib/Engineer');
 function init (){
     console.log('app initiated...');
     initHtml();
+    addEmployee();
 };
+const employees = [];
+
+function addEmployee() {
+    inquirer.prompt([{
+        message: "Enter new employee's name...",
+        name: 'name'
+    },
+    {
+        type: "list",
+        message: "Select employee's job role...",
+        choices: [
+            "Engineer",
+            "Intern",
+            "Manager"
+        ],
+        name: 'role'
+    },
+    {
+        message: "Enter employee's email..."
+        name: email;
+    },
+    {
+        type: "list"
+    }
+    ]);
+};
+
 
 function initHtml() {
     console.log('html initiated...');
