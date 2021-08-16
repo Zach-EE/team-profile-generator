@@ -1,0 +1,30 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Node.js CLI application that takes in information about employees and generates it on an html webpage",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^8.1.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zach-EE/team-profile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zach-EE/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/Zach-EE/team-profile-generator#readme"
+}
