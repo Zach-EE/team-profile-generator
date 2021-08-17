@@ -30,5 +30,13 @@ describe('getName',() => {
     const testValue = 'Frank the Tank';
     const e = new Employee(testValue);
     expect(e.getName()).toBe(testValue);
-  })
-})
+  });
+});
+
+describe('getName',() => {
+  it('Can get id via getId()', () => {
+    const testValue = '123';
+    const e = new Employee('Frank the tank', testValue);
+    expect(e.getId()).toBe(testValue);
+  });
+});
