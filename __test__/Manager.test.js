@@ -6,11 +6,11 @@ test('Can set office#  via constructor arg', () => {
   expect(e.officeNumber).toBe(testValue);
 });
 
-// test('Can get school via getSchool()', () => {
-//   const testValue = 'Phoenix Online';
-//   const e = new Manager('Frank the tank', '123', 'test@gmail.com', testValue);
-//   expect(e.getSchool()).toBe(testValue);
-// });
+test('Can get school via getOfficeNumber()', () => {
+  const testValue = '555-867-5309';
+  const e = new Manager('Frank the tank', '123', 'test@gmail.com', testValue);
+  expect(e.getOfficeNumber()).toBe(testValue);
+});
 
 // test('Can get "Intern" via getRole()', () => {
 //     const testValue = 'Manager';
