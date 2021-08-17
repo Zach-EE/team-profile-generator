@@ -8,7 +8,7 @@ const Intern = require('./lib/Intern');
 const { resolve } = require('path/posix');
 
 function init (){
-    console.log('app initiated...');
+    console.log('application initiated...');
     initHtml();
     addEmployee();
 };
@@ -16,6 +16,7 @@ const employees = [];
 
 //* Gets employee information from user
 function addEmployee() {
+    console.log('Adding New Employee...');
     inquirer.prompt([{
         message: "Enter new employee's name...",
         name: 'name'
@@ -85,7 +86,7 @@ function addEmployee() {
 
 //* Initial html text for page src/output.html
 function initHtml() {
-    console.log('html initiated...');
+    // console.log('html initiated...');
     const html = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -110,7 +111,7 @@ function initHtml() {
 
 //* Add new employee information to src/output.html
 function addHtml(member) {
-    console.log("we in here");
+    // console.log("we in here");
     return new Promise((resolve, reject)=>{
       const name = member.getName();
       const role = member.getRole();
@@ -155,7 +156,7 @@ function addHtml(member) {
           </div>
         </div>`;
       }
-      console.log(`adding ${name}`);
+      console.log(`${name} has been added to page...`);
       fs.appendFile('./src/output.html', data, (err) => {
         if (err) {
             return reject(err);
@@ -170,7 +171,7 @@ function endHtml(){
         </div>
     </body>
     </html>`;
-    console.log('adding html closing text');
+    console.log('html page located at ./src/output.html');
     fs.appendFile('./src/output.html', data, (err) => {
       if (err){
           return reject(err);
