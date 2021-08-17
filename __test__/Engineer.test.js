@@ -11,3 +11,9 @@ test('Can get gitHub User via getGithub()', () => {
   const e = new Engineer('Frank the tank', '123', 'test@gmail.com', testValue);
   expect(e.getGithub()).toBe(testValue);
 });
+
+test('Can get "Engineer" via getRole()', () => {
+    const testValue = 'Engineer';
+    const e = new Engineer('Frank the tank', '123', 'test@gmail.com', 'testUserName');
+    expect(e.getRole()).toBe(testValue);
+  });
