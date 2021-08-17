@@ -5,6 +5,7 @@ const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
+const { resolve } = require('path/posix');
 
 function init (){
     console.log('app initiated...');
@@ -73,6 +74,8 @@ function addEmployee() {
             addHtml(newEmployee);
               if (anotherEmployee === "yes") {
                   addEmployee();
+              }else{
+                  endHtml();
               };
             // console.info(employees);
         });
@@ -97,10 +100,7 @@ function initHtml() {
             <span class = "navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
         </nav>
         <div class="container">
-            <div class="row"></div>
-        </div>
-    </body>
-    </html>`;
+            <div class="row">`;
     fs.writeFile('./src/output.html', html, (err)=>{
         if (err) {
             console.log(err);
@@ -163,6 +163,21 @@ function addHtml(member) {
         return resolve();
       });
     });
+}
+
+function endHtml(){
+    data=`</div>
+        </div>
+    </body>
+    </html>`;
+    console.log('adding html closing text');
+    fs.appendFile('./src/output.html', data, (err) => {
+      if (err){
+          return reject(err);
+      };
+      return resolve();
+    });
+
 }
 
 init();
