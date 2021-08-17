@@ -10,6 +10,7 @@ function init (){
 };
 const employees = [];
 
+//* Gets employee information from user
 function addEmployee() {
     inquirer.prompt([{
         message: "Enter new employee's name...",
@@ -56,19 +57,22 @@ function addEmployee() {
             ],
             name: "anotherEmployee"
         }])
-        .then(({roleInfo}) => {
+        .then(({roleInfo, anotherEmployee}) => {
             let newEmployee;
             if (role === "Engineer") {
                 newEmployee = new Engineer(name, id, email, roleInfo);
             }
-            employees.push(newEmployee);
-            console.log(employees);
-        })
+            employees.push(newEmployee)
+              if (anotherEmployee === "yes") {
+                  addEmployee()
+              };
+            // console.info(employees);
+        });
     });
 
 };
 
-
+//* Initial html text for page src/output.html
 function initHtml() {
     console.log('html initiated...');
     const html = `<!DOCTYPE html>
