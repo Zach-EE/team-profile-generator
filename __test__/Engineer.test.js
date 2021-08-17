@@ -4,4 +4,10 @@ test('Can set gitHub account via constructor arg', () => {
   const testValue = 'gitHubUser';
   const e = new Engineer('Frank the Tank','123','test@gmail.com', testValue);
   expect(e.github).toBe(testValue);
-})
+});
+
+test('Can get gitHub User via getGithub()', () => {
+  const testValue = 'testUserName';
+  const e = new Engineer('Frank the tank', '123', 'test@gmail.com', testValue);
+  expect(e.getGithub()).toBe(testValue);
+});
