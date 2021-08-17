@@ -33,10 +33,26 @@ describe('getName',() => {
   });
 });
 
-describe('getName',() => {
+describe('getId',() => {
   it('Can get id via getId()', () => {
     const testValue = '123';
     const e = new Employee('Frank the tank', testValue);
     expect(e.getId()).toBe(testValue);
+  });
+});
+
+describe('getEmail',() => {
+  it('Can get id via getEmail()', () => {
+    const testValue = 'test@gmail.com';
+    const e = new Employee('Frank the tank', '123', testValue);
+    expect(e.getEmail()).toBe(testValue);
+  });
+});
+
+describe('getRole',() => {
+  it('Can get id via getRole()', () => {
+    const testValue = 'Employee';
+    const e = new Employee('Frank the tank', '123', testValue);
+    expect(e.getRole()).toBe(testValue);
   });
 });
