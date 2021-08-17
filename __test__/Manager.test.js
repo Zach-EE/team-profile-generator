@@ -12,8 +12,8 @@ test('Can get school via getOfficeNumber()', () => {
   expect(e.getOfficeNumber()).toBe(testValue);
 });
 
-// test('Can get "Intern" via getRole()', () => {
-//     const testValue = 'Manager';
-//     const e = new Manager('Frank the tank', '123', 'test@gmail.com', 'Phoenix Online');
-//     expect(e.getRole()).toBe(testValue);
-//   });
+test('Can get "Intern" via getRole()', () => {
+    const testValue = 'Manager';
+    const e = new Manager('Frank the tank', '123', 'test@gmail.com', 'Phoenix Online');
+    expect(e.getRole()).toBe(testValue);
+  });
