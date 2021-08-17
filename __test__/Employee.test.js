@@ -7,9 +7,9 @@ describe('Employee', () => {
   });
 
   it('Can set name via constructor arg', () => {
-    const name = 'Frank the Tank';
-    const e = new Employee(name);
-    expect(e.name).toBe(name);
+    const testValue = 'Frank the Tank';
+    const e = new Employee(testValue);
+    expect(e.name).toBe(testValue);
   });
 
   it('Can set id  via constructor arg', () => {
@@ -24,3 +24,11 @@ describe('Employee', () => {
     expect(e.email).toBe(testValue);
   });
 });
+
+describe('getName',() => {
+  it('Can get name via getName()', () => {
+    const testValue = 'Frank the Tank';
+    const e = new Employee(testValue);
+    expect(e.getName()).toBe(testValue);
+  })
+})
