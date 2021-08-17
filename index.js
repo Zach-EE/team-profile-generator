@@ -65,13 +65,15 @@ function addEmployee() {
             if (role === "Engineer") {
                 newEmployee = new Engineer(name, id, email, roleInfo);
             }else if (role === "Intern"){
-                newEmployee = new Intern (name, id, email, school);
+                newEmployee = new Intern (name, id, email, roleInfo);
             }else {
-                newEmployee = new Manager (name, id, email, officeNumber);
+                newEmployee = new Manager (name, id, email, roleInfo);
             }
             employees.push(newEmployee)
               if (anotherEmployee === "yes") {
                   addEmployee()
+              }else {
+                  addHtml()
               };
             // console.info(employees);
         });
@@ -109,10 +111,11 @@ function initHtml() {
 
 //* Add new employee information to src/output.html
 function addHtml(member) {
-    return new Promise((resolve, reject)=>{
-      const name = member.getName();
-      const role = member.
-    })
+    console.log("we in here");
+    // return new Promise((resolve, reject)=>{
+    //   const name = member.getName();
+    //   const role = member.getRole();
+    // });
 }
 
 init();
