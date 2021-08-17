@@ -71,9 +71,9 @@ function addEmployee() {
             }
             employees.push(newEmployee)
               if (anotherEmployee === "yes") {
-                  addEmployee()
+                  addEmployee();
               }else {
-                  addHtml()
+                  addHtml(newEmployee);
               };
             // console.info(employees);
         });
@@ -112,10 +112,59 @@ function initHtml() {
 //* Add new employee information to src/output.html
 function addHtml(member) {
     console.log("we in here");
-    // return new Promise((resolve, reject)=>{
-    //   const name = member.getName();
-    //   const role = member.getRole();
-    // });
+    return new Promise((resolve, reject)=>{
+      const name = member.getName();
+      const role = member.getRole();
+      const id = member.getId();
+      const email = member.getEmail()
+      const github = member.getGithub();
+
+      let data = "";
+      if (role === 'Engineer'){
+        const github = member.getGithub();
+        data = `<div class="col-6">
+          <div class="card mx-auto mb-3" style="width: 18rem">
+          <h5 class="card-header">${name}<br /><br />Engineer</h5>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${id}</li>
+              <li class="list-group-item">Email Address: ${email}</li>
+              <li class="list-group-item">GitHub: ${github}</li>
+          </ul>
+          </div>
+        </div>`;
+      } else if (role === 'Intern') {
+        const school = member.getSchool();
+        data = `<div class="col-6">
+          <div class="card mx-auto mb-3" style="width: 18rem">
+          <h5 class="card-header">${name}<br /><br />Engineer</h5>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${id}</li>
+              <li class="list-group-item">Email Address: ${email}</li>
+              <li class="list-group-item">GitHub: ${school}</li>
+          </ul>
+          </div>
+        </div>`;
+      } else {
+        const officeNumber = member.officeNumber();
+        data = `<div class="col-6">
+          <div class="card mx-auto mb-3" style="width: 18rem">
+          <h5 class="card-header">${name}<br /><br />Engineer</h5>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${id}</li>
+              <li class="list-group-item">Email Address: ${email}</li>
+              <li class="list-group-item">GitHub: ${officeNumber}</li>
+          </ul>
+          </div>
+        </div>`;
+      }
+      console.log(`adding ${name}`);
+      fs.appendFile('./src/output.html', data, (err) => {
+        if (err) {
+            return reject(err);
+        };
+        return resolve();
+      });
+    });
 }
 
 init();
