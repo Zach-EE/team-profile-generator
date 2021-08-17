@@ -16,6 +16,10 @@ function addEmployee() {
         name: 'name'
     },
     {
+        message: "Enter employee's ID#...",
+        name: 'id'
+    },
+    {
         type: "list",
         message: "Select employee's job role...",
         choices: [
