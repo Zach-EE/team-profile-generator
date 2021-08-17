@@ -3,6 +3,9 @@ const path = require('path');
 const fs = require('fs');
 
 const Engineer = require('./lib/Engineer');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
+
 function init (){
     console.log('app initiated...');
     initHtml();
@@ -61,6 +64,10 @@ function addEmployee() {
             let newEmployee;
             if (role === "Engineer") {
                 newEmployee = new Engineer(name, id, email, roleInfo);
+            }else if (role === "Intern"){
+                newEmployee = new Intern (name, id, email, school);
+            }else {
+                newEmployee = new Manager (name, id, email, officeNumber);
             }
             employees.push(newEmployee)
               if (anotherEmployee === "yes") {
@@ -98,6 +105,14 @@ function initHtml() {
             console.log(err);
         }
     });
-};
+}
+
+//* Add new employee information to src/output.html
+function addHtml(member) {
+    return new Promise((resolve, reject)=>{
+      const name = member.getName();
+      const role = member.
+    })
+}
 
 init();
