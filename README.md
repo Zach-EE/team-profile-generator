@@ -2,7 +2,7 @@
 
 ## Description:
 Node.js CLI application that takes in information about employees and generates it on an html webpage
-![](./assets/gif/appInAction.jpg)
+![til](./assets/gif/appInAction.gif)
 
 ## Installation & Testing
 ![alt text](./assets/img/testCLI.jpg)
