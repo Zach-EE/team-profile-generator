@@ -51,7 +51,15 @@ function addEmployee() {
                 "no"
             ],
             name: "anotherEmployee"
-        }]);
+        }])
+        .then(({roleInfo}) => {
+            let newEmployee;
+            if (role === "Engineer") {
+                newEmployee = new Engineer(name, id, email, roleInfo);
+            }
+            employees.push(newEmployee);
+            console.log(employees);
+        })
     });
 
 };
